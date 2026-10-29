@@ -55,7 +55,10 @@ export default function SolarHero() {
     scene.add(group);
 
     const groundGeo = new THREE.PlaneGeometry(48, 48);
-    const groundMat = new THREE.MeshStandardMaterial({ color: FILL_COLOR, roughness: 1 });
+    const groundMat = new THREE.MeshStandardMaterial({
+      color: new THREE.Color(getVar('--bg', '#FAF9F6')),
+      roughness: 1,
+    });
     const ground = new THREE.Mesh(groundGeo, groundMat);
     ground.rotation.x = -Math.PI / 2;
     ground.receiveShadow = true;
@@ -194,6 +197,7 @@ export default function SolarHero() {
     function refreshSceneColors() {
       cubeEdges.material.color.set(new THREE.Color(getVar('--ink', '#15171B')));
       grid.material.color.set(new THREE.Color(getVar('--line', '#D8D5CE')));
+      groundMat.color.set(new THREE.Color(getVar('--bg', '#FAF9F6')));
     }
     refreshColorsRef.current = refreshSceneColors;
 

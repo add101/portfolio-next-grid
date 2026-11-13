@@ -1,5 +1,5 @@
 :root{
-  --bg:#FAF9F6; --ink:#15171B; --ink-soft:#5B5F66; --line:#E6E3DC;
+  --bg:#fefefd; --ink:#15171B; --ink-soft:#5B5F66; --line:#E6E3DC;
   --accent:#2547D0; --accent-glow:#2547D0; --panel:#FFFFFF;
   --font-display:var(--font-space-grotesk),-apple-system,'Segoe UI',sans-serif;
   --font-body:var(--font-plex-sans),-apple-system,'Segoe UI',sans-serif;
@@ -8,12 +8,7 @@
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
-:root:not([data-theme="light"]){
-  @media (prefers-color-scheme: dark){
-    --bg:#0A0B0D; --ink:#EDEEF0; --ink-soft:#8B9099; --line:#25272C;
-    --accent:#5EE0F0; --accent-glow:#5EE0F0; --panel:#101215;
-  }
-}
+/* s */~
 :root[data-theme="dark"]{
   --bg:#0A0B0D; --ink:#EDEEF0; --ink-soft:#8B9099; --line:#25272C;
   --accent:#5EE0F0; --accent-glow:#5EE0F0; --panel:#101215;

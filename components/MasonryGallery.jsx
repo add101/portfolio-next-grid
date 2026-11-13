@@ -3,15 +3,15 @@
 import { useEffect, useRef, useState } from 'react';
 
 const items = [
-  { title: 'UE Prototype 01', tag: 'Realtime / UE', ratio: '4/5', desc: 'Placeholder note — realtime prototype details go here once the reel is cut.' },
-  { title: 'WebXR Study', tag: 'Web3D', ratio: '1/1', desc: 'Placeholder note for a browser-based interactive piece.' },
-  { title: 'Interior Vis 04', tag: 'Visualisation', ratio: '3/4', desc: 'Placeholder note for an architectural visualisation still.' },
-  { title: 'Animation Test', tag: 'Realtime / UE', ratio: '16/9', desc: 'Placeholder note for a realtime animation clip.' },
-  { title: 'R3F Experiment', tag: 'Web3D', ratio: '4/3', desc: 'Placeholder note for a React Three Fiber build.' },
-  { title: 'Product Vis 02', tag: 'Visualisation', ratio: '1/1', desc: 'Placeholder note for a product visualisation render.' },
-  { title: 'VR Environment', tag: 'Realtime / UE', ratio: '3/4', desc: 'Placeholder note for a VR environment prototype.' },
-  { title: 'Shader Study', tag: 'Web3D', ratio: '4/5', desc: 'Placeholder note for a WebGL shader experiment.' },
-  { title: 'Exterior Vis 01', tag: 'Visualisation', ratio: '16/9', desc: 'Placeholder note for an exterior architectural render.' },
+  { title: 'UE Prototype 01', tag: 'Realtime / UE', ratio: '4/5', image: '01  3D Rendering - House Zero - Queenswood Pretoria.jpg', desc: 'Placeholder note — realtime prototype details go here once the reel is cut.' },
+  { title: 'WebXR Study', tag: 'Web3D', ratio: '1/1', image: '01-Holborn-Gate-Reception.jpg', desc: 'Placeholder note for a browser-based interactive piece.' },
+  { title: 'Interior Vis 04', tag: 'Visualisation', ratio: '3/4', image: '02 3D Rendering - House Zero - House Ivy - Pretoria.jpg', desc: 'Placeholder note for an architectural visualisation still.' },
+  { title: 'Animation Test', tag: 'Realtime / UE', ratio: '16/9', image: '03 3D Rendering Office Library - London.jpg', desc: 'Placeholder note for a realtime animation clip.' },
+  { title: 'R3F Experiment', tag: 'Web3D', ratio: '4/3', image: '04_3D Visualisation - Renderings of Waterford Estate - Dunkeld.jpg', desc: 'Placeholder note for a React Three Fiber build.' },
+  { title: 'Product Vis 02', tag: 'Visualisation', ratio: '1/1', image: '05 3D Visualisation - SBE Architects Renovation - Front Render.jpg', desc: 'Placeholder note for a product visualisation render.' },
+  { title: 'VR Environment', tag: 'Realtime / UE', ratio: '3/4', image: '06 3D Visualisation - SBE Architects Renovation - Garden Boma Pool  Render.jpg', desc: 'Placeholder note for a VR environment prototype.' },
+  { title: 'Shader Study', tag: 'Web3D', ratio: '4/5', image: '08 3D Rendering - Canteen Renovation Nottingham.jpg', desc: 'Placeholder note for a WebGL shader experiment.' },
+  { title: 'Exterior Vis 01', tag: 'Visualisation', ratio: '16/9', image: '09 3D Rendering - Office Interior Renovation - Bryanston -Johannesburg.jpg', desc: 'Placeholder note for an exterior architectural render.' },
 ];
 
 export default function MasonryGallery() {
@@ -57,7 +57,12 @@ export default function MasonryGallery() {
               }
             }}
           >
-            <div className="g-ph" style={{ aspectRatio: it.ratio }}>Image placeholder</div>
+            <img
+              className="g-ph"
+              src={encodeURI(`/images/${it.image}`)}
+              alt={it.title}
+              style={{ aspectRatio: it.ratio, objectFit: 'cover', padding: 0 }}
+            />
             <div className="g-meta">
               <h3>{it.title}</h3>
               <span className="info-dot" aria-hidden="true">i</span>
@@ -72,7 +77,12 @@ export default function MasonryGallery() {
       >
         {active && (
           <div className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-            <div className="modal-ph">Image placeholder</div>
+            <img
+              className="modal-ph"
+              src={encodeURI(`/images/${active.image}`)}
+              alt={active.title}
+              style={{ objectFit: 'cover' }}
+            />
             <div className="modal-body">
               <div className="modal-head">
                 <div className="modal-title-row">
